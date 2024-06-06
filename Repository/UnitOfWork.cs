@@ -10,13 +10,18 @@ namespace BlogAPI.Repository
     public class UnitOfWork : IUnitOfWork
     {
         private readonly BlogDbContext DbContext;
-        private IRepository<Author> _author;
-        private IRepository<Contact> _contact;
-        private IRepository<Category> _category;
-        private IRepository<Post> _post;
 
+        private IRepositoryGenernic<Author> _author;
+        private IRepositoryGenernic<Contact> _contact;
+        private IRepositoryGenernic<Category> _category;
+        private IPostRepository _post;
 
-        public IRepository<Author> Author
+        public UnitOfWork(BlogDbContext DbContext)
+        {
+            this.DbContext = DbContext;
+        }
+
+        public IRepositoryGenernic<Author> Author
         {
             get
             {
@@ -24,7 +29,7 @@ namespace BlogAPI.Repository
             }
         }
 
-        public IRepository<Category> Category
+        public IRepositoryGenernic<Category> Category
         {
             get
             {
@@ -32,19 +37,18 @@ namespace BlogAPI.Repository
             }
         }
 
-        public IRepository<Contact> Contact
+        public IRepositoryGenernic<Contact> Contact
         {
             get
             {
                 return _contact ??= new Repository<Contact>(DbContext);
             }
         }
-
-        public IRepository<Post> Post
+        public IPostRepository Post
         {
             get
             {
-                return _post ??= new Repository<Post>(DbContext);
+                return _post ??= new PostRepository(DbContext);
             }
         }
 

@@ -7,10 +7,10 @@ namespace BlogAPI.Repository
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<Author> Author { get; }
-        IRepository<Category> Category { get; }
-        IRepository<Contact> Contact { get; }
-        IRepository<Post> Post { get; }
+        IRepositoryGenernic<Author> Author { get; }
+        IRepositoryGenernic<Category> Category { get; }
+        IRepositoryGenernic<Contact> Contact { get; }
+        IPostRepository Post { get; }
         void SaveChange();
         Task SaveChangeAsync();
     }

@@ -12,9 +12,9 @@ namespace BlogAPI.Model
     {
         public PostModel()
         {
-            Created = DateTime.Now;
+
         }
-        public int ID { set; get; }
+
 
         [Display(Name = "Tiêu đề")]
         [Column(TypeName = "nvarchar")]
@@ -32,27 +32,27 @@ namespace BlogAPI.Model
         [Required(ErrorMessage = "Vui lòng nhập nội dung bài viết!")]
         public string Content { set; get; }
 
-        [Display(Name = "Tiêu đề")]
-        [Column(TypeName = "Datetime")]
-        [StringLength(maximumLength: 200)]
-        [Required(ErrorMessage = "Vui lòng nhập tiêu đề!")]
-        public DateTime Created { set; get; }
+        // [Display(Name = "Tiêu đề")]
+        // [Column(TypeName = "Datetime")]
+        // [StringLength(maximumLength: 200)]
+        // [Required(ErrorMessage = "Vui lòng nhập tiêu đề!")]
+        // public DateTime Created { set; get; }
 
-        [Column(TypeName = "int")]
-        public int View { set; get; }
+        // [Column(TypeName = "int")]
+        // public int View { set; get; }
 
-        [Display(Name = "URL")]
-        [StringLength(maximumLength: 200)]
-        public string Slug { set; get; }
+        // [Display(Name = "URL")]
+        // [StringLength(maximumLength: 200)]
+        // public string Slug { set; get; }
 
         [Display(Name = "Thể loại")]
         public int CateID { set; get; }
-        [ForeignKey("CateID")]
-        public Category Category { set; get; }
+        // [ForeignKey("CateID")]
+        // public Category Category { set; get; }
 
         [Display(Name = "Tác giả")]
         public int AuthorID { set; get; }
-        [ForeignKey("AuthorID")]
-        public Author Author { set; get; }
+        // [ForeignKey("AuthorID")]
+        // public Author Author { set; get; }
     }
 }

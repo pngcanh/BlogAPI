@@ -9,7 +9,7 @@ using Microsoft.Identity.Client;
 
 namespace BlogAPI.Repository
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepositoryGenernic<T> where T : class
     {
 
         private readonly BlogDbContext DbContext;
@@ -30,7 +30,6 @@ namespace BlogAPI.Repository
         {
             DbSet.Attach(entity);
             DbContext.Entry(entity).State = EntityState.Modified;
-
         }
 
         public void Delete(object id)

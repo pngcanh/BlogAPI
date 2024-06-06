@@ -7,10 +7,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlogAPI.Repository
 {
-    public interface IRepository<T> where T : class
+    public interface IRepositoryGenernic<T> where T : class
     {
-        // DbSet<T> DbSet { get; }
-        // DbContext DbContext { set; get; }
 
         #region Sync Method
         //  lay tat ca entities

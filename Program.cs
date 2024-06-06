@@ -29,10 +29,10 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //dang ky repository
-builder.Services.AddScoped<IRepository<Post>, Repository<Post>>();
-builder.Services.AddScoped<IRepository<Category>, Repository<Category>>();
-builder.Services.AddScoped<IRepository<Author>, Repository<Author>>();
-builder.Services.AddScoped<IRepository<Contact>, Repository<Contact>>();
+builder.Services.AddScoped<IRepositoryGenernic<Post>, Repository<Post>>();
+builder.Services.AddScoped<IRepositoryGenernic<Category>, Repository<Category>>();
+builder.Services.AddScoped<IRepositoryGenernic<Author>, Repository<Author>>();
+builder.Services.AddScoped<IRepositoryGenernic<Contact>, Repository<Contact>>();
 
 
 
