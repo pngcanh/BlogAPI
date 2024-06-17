@@ -14,16 +14,16 @@ namespace BlogAPI.Data
         [Display(Name = "Họ và tên")]
         [StringLength(30)]
         [Required(ErrorMessage = "Vui lòng nhập họ tên!")]
-        public int Name { set; get; }
+        public string Name { set; get; } = null!;
 
         [Display(Name = "Địa chỉ Email")]
         [EmailAddress]
         [Required(ErrorMessage = "Vui lòng nhập địa chỉ Email!")]
-        public string Email { set; get; }
+        public string Email { set; get; } = null!;
 
         [Display(Name = "Địa chỉ Email")]
         [StringLength(maximumLength: 500, ErrorMessage = "Nội dung không vượt quá 500 ký tự!")]
         [Required(ErrorMessage = "Vui lòng nhập nội dung")]
-        public string Content { set; get; }
+        public string Content { set; get; } = null!;
     }
 }

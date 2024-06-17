@@ -11,6 +11,8 @@ namespace BlogAPI.Repository
         IRepositoryGenernic<Category> Category { get; }
         IRepositoryGenernic<Contact> Contact { get; }
         IPostRepository Post { get; }
+        IAccountRepository Account { get; }
+        IRoleRepository Role { get; }
         void SaveChange();
         Task SaveChangeAsync();
     }

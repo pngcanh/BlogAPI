@@ -15,11 +15,11 @@ namespace BlogAPI.Data
         [Display(Name = "Thể loại")]
         [Column(TypeName = "nvarchar")]
         [StringLength(maximumLength: 35)]
-        public string CategoryName { set; get; }
+        public string CategoryName { set; get; } = null!;
 
         [Display(Name = "Mô tả")]
         [Column(TypeName = "nvarchar")]
         [StringLength(maximumLength: 300)]
-        public string Description { set; get; }
+        public string Description { set; get; } = null!;
     }
 }

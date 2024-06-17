@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BlogAPI.Data;
 using BlogAPI.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,7 +39,9 @@ namespace BlogAPI.Controller.Blog
             return Ok(data);
         }
 
+
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([FromBody] Author author)
         {
             if (ModelState.IsValid)

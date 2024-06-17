@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BlogAPI.Data;
 using BlogAPI.Model;
+using Microsoft.AspNetCore.Hosting;
 
 namespace BlogAPI.Helper
 {
+    // khong su dung 
     public class ApplicationMapper : Profile
     {
         private readonly IWebHostEnvironment webHost;
@@ -15,7 +17,7 @@ namespace BlogAPI.Helper
         public ApplicationMapper(IWebHostEnvironment webHost)
         {
             this.webHost = webHost;
-            CreateMap<PostModel, Post>().ForMember(dest => dest.Photo, opt => opt.MapFrom(src => ConvertIFormFileToString(src.FileUpload)));
+            CreateMap<PostDTO, Post>().ForMember(dest => dest.Photo, opt => opt.MapFrom(src => ConvertIFormFileToString(src.FileUpload)));
         }
         private string ConvertIFormFileToString(IFormFile file)
         {

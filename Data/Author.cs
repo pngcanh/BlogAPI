@@ -17,13 +17,13 @@ namespace BlogAPI.Data
         [Column(TypeName = "nvarchar")]
         [StringLength(maximumLength: 35)]
         [Required(ErrorMessage = "Vui lòng nhập tên tác giả!")]
-        public string AuthorName { set; get; }
+        public string AuthorName { set; get; } = null!;
 
         [Display(Name = "Email")]
         [EmailAddress]
         [StringLength(maximumLength: 300)]
         [Required(ErrorMessage = "Vui lòng nhập địa chỉ Email")]
-        public string Email { set; get; }
+        public string Email { set; get; } = null!;
 
         [Display(Name = "Giới tính")]
         [Column(TypeName = "bit")]

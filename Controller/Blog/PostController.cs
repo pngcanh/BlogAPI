@@ -39,7 +39,7 @@ namespace BlogAPI.Controller.Blog
 
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] PostModel entity)
+        public async Task<IActionResult> Create([FromForm] PostDTO entity)
         {
             var author = await unitOfWork.Author.GetByIDAsync(entity.AuthorID);
             if (author == null)
@@ -88,7 +88,7 @@ namespace BlogAPI.Controller.Blog
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromForm] PostModel entity)
+        public async Task<IActionResult> Update(int id, [FromForm] PostDTO entity)
         {
             var post = await unitOfWork.Post.GetByIDAsync(id);
             if (post == null)

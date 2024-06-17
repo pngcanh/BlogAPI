@@ -8,29 +8,25 @@ using BlogAPI.Data;
 
 namespace BlogAPI.Model
 {
-    public class PostModel
+    public class PostDTO
     {
-        public PostModel()
-        {
-
-        }
 
 
         [Display(Name = "Tiêu đề")]
         [Column(TypeName = "nvarchar")]
         [StringLength(maximumLength: 200)]
         [Required(ErrorMessage = "Vui lòng nhập tiêu đề!")]
-        public string Title { set; get; }
+        public string Title { set; get; } = null!;
 
         [Display(Name = "Ảnh")]
         [DataType(DataType.Upload)]
         [Required(ErrorMessage = "Vui lòng chọn ảnh cho bài viết")]
-        public IFormFile FileUpload { set; get; }
+        public IFormFile FileUpload { set; get; } = null!;
 
         [Display(Name = "Nội dung")]
         [Column(TypeName = "ntext")]
         [Required(ErrorMessage = "Vui lòng nhập nội dung bài viết!")]
-        public string Content { set; get; }
+        public string Content { set; get; } = null!;
 
         // [Display(Name = "Tiêu đề")]
         // [Column(TypeName = "Datetime")]
